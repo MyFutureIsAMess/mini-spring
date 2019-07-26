@@ -1,12 +1,12 @@
-package com.wgj.starter;
+package com.wgj.web.servlet;
 
-import com.wgj.web.server.TomcatServer;
-import org.apache.catalina.LifecycleException;
+import javax.servlet.*;
+import java.io.IOException;
 
 /**
  * @author Guojian Wang
  * @version 1.0
- * @date 2019/7/27 - 0:46
+ * @date 2019/7/27 - 2:23
  * @since 1.0
  * ━━━━━━神兽出没━━━━━━
  * 　　　┏┓　　　┏┓
@@ -28,14 +28,31 @@ import org.apache.catalina.LifecycleException;
  * 　　　　　┗┻┛　┗┻┛
  * ━━━━━━感觉萌萌哒━━━━━━
  */
-public class MiniApplication {
-    public static void run(Class<?> cls, String[] args) {
-        System.out.println("Hello mini-spring!");
-        TomcatServer tomcatServer = new TomcatServer(args);
-        try {
-            tomcatServer.startServer();
-        } catch (LifecycleException e) {
-            e.printStackTrace();
-        }
+public class TestServlet implements Servlet {
+    @Override
+    public void init(ServletConfig servletConfig) throws ServletException {
+
+    }
+
+    @Override
+    public ServletConfig getServletConfig() {
+        return null;
+    }
+
+    @Override
+    public void service(ServletRequest request, ServletResponse response) throws ServletException,
+            IOException {
+        response.getWriter().println("test");
+
+    }
+
+    @Override
+    public String getServletInfo() {
+        return null;
+    }
+
+    @Override
+    public void destroy() {
+
     }
 }
