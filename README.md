@@ -12,6 +12,7 @@
 >>      * [Servlet](#Servlet)
 >> * [Tomcat](#Tomcat)
 >> * [Servlet的维护](#Servlet的维护)
+>> * [原Servlet调度流程](#原Servlet调度流程)
 ># 模块结构
    ![image text](images/模块结构.png)
 ># Spring包结构
@@ -47,3 +48,6 @@
 >>## ****`由服务器调度配置`*
 >>## ***`使用web.xml中性化配置`**
 >>## ***`每种业务添加一个Servlet，对应一个URI`**
+
+>># 原Servlet调度流程
+   ![image text](images/原Servlet调度流程.png)
