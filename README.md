@@ -13,6 +13,10 @@
 >> * [Tomcat](#Tomcat)
 >> * [Servlet的维护](#Servlet的维护)
 >> * [原Servlet调度流程](#原Servlet调度流程)
+>> * [服务器调度问题](#服务器调度问题)
+>> * [Spring调度流程](#Spring调度流程)
+
+
 ># 模块结构
    ![image text](images/模块结构.png)
 ># Spring包结构
@@ -49,5 +53,17 @@
 >>## ***`使用web.xml中性化配置`**
 >>## ***`每种业务添加一个Servlet，对应一个URI`**
 
->># 原Servlet调度流程
+># 原Servlet调度流程
    ![image text](images/原Servlet调度流程.png)
+   
+># 服务器调度问题
+>>## ****`配置集中，大而杂，不易管理`*
+>>## ****`多次实现Servlet接口，不必要`*
+
+># Spring调度流程
+   ![image text](images/Spring调度流程.png)
+   
+># Spring调度优势
+>>## ****`用注解，实现简单，按需实现`*
+>>## ****`配置分散，不杂乱`*
+>>## ****`容器内实现，易控制`*
