@@ -1,12 +1,11 @@
-package com.wgj.web.servlet;
+package com.wgj.web.mvc;
 
-import javax.servlet.*;
-import java.io.IOException;
+import java.lang.annotation.*;
 
 /**
  * @author Guojian Wang
  * @version 1.0
- * @date 2019/7/27 - 2:23
+ * @date 2019/7/27 - 13:05
  * @since 1.0
  * ━━━━━━神兽出没━━━━━━
  * 　　　┏┓　　　┏┓
@@ -28,31 +27,9 @@ import java.io.IOException;
  * 　　　　　┗┻┛　┗┻┛
  * ━━━━━━感觉萌萌哒━━━━━━
  */
-public class TestServlet implements Servlet {
-    @Override
-    public void init(ServletConfig servletConfig) throws ServletException {
-
-    }
-
-    @Override
-    public ServletConfig getServletConfig() {
-        return null;
-    }
-
-    @Override
-    public void service(ServletRequest request, ServletResponse response) throws ServletException,
-            IOException {
-        response.getWriter().println("test");
-
-    }
-
-    @Override
-    public String getServletInfo() {
-        return null;
-    }
-
-    @Override
-    public void destroy() {
-
-    }
+@Documented
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.METHOD)
+public @interface RequestMapping {
+    String value();
 }
