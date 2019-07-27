@@ -1,7 +1,11 @@
 package com.wgj.web.servlet;
 
+import com.wgj.web.handler.HandlerManager;
+import com.wgj.web.handler.MappingHandler;
+
 import javax.servlet.*;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * @author Guojian Wang
@@ -42,8 +46,19 @@ public class DispatcherServlet implements Servlet {
     @Override
     public void service(ServletRequest request, ServletResponse response) throws ServletException,
             IOException {
-        response.getWriter().println("test");
-
+        for (MappingHandler mappingHandler : HandlerManager.mappingHandlerList) {
+            try {
+                if (mappingHandler.handle(request, response)) {
+                    return;
+                }
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (InvocationTargetException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @Override
